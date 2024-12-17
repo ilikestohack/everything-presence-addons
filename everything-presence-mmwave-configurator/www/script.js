@@ -313,6 +313,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mousePos = getMousePos(canvas, e);
     const zoneInfo = getZoneAtPosition(mousePos);
 
+    if(e.button === 2) return;
+
     if (zoneInfo !== null) {
       const { index, corner, zoneType } = zoneInfo;
       draggingZone = index;
