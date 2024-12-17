@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Variables for dragging and resizing
   let isDragging = false;
   let draggingZone = null;
+  let draggingZoneType = null;
   let dragType = null; // 'move', 'resize', 'create'
   let resizeCorner = null;
   const dragOffset = { x: 0, y: 0 };
@@ -318,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (zoneInfo !== null) {
       const { index, corner, zoneType } = zoneInfo;
       draggingZone = index;
+      draggingZoneType = zoneType;
       dragOffset.x = mousePos.x;
       dragOffset.y = mousePos.y;
 
@@ -449,10 +451,10 @@ document.addEventListener("DOMContentLoaded", () => {
         zone.endY = Math.round(zone.endY);
       }
     } else if (dragType === "resize") {
-      if (zoneInfo.zoneType === "user") {
+      if (draggingZoneType === "user") {
         const zone = userZones[draggingZone];
         adjustZoneCornerWithConstraints(zone, resizeCorner, dx, dy);
-      } else if (zoneInfo.zoneType === "exclusion") {
+      } else if (draggingZoneType === "exclusion") {
         const zone = exclusionZones[draggingZone];
         adjustZoneCornerWithConstraints(zone, resizeCorner, dx, dy);
       }
