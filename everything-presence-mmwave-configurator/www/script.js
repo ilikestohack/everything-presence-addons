@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mousePos = getMousePos(canvas, e);
     const zoneInfo = getZoneAtPosition(mousePos);
 
-    if(e.button === 2) return;
+    if(e.button === 2) return; // This prevents deleting then creating zones by ignoring right clicks
 
     if (zoneInfo !== null) {
       const { index, corner, zoneType } = zoneInfo;
