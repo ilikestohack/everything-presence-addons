@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Variables for dragging and resizing
   let isDragging = false;
-  let isDeleting = false;
   let draggingZone = null;
   let dragType = null; // 'move', 'resize', 'create'
   let resizeCorner = null;
@@ -314,8 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const mousePos = getMousePos(canvas, e);
     const zoneInfo = getZoneAtPosition(mousePos);
 
-    if(isDeleting) return;
-
     if (zoneInfo !== null) {
       const { index, corner, zoneType } = zoneInfo;
       draggingZone = index;
@@ -515,7 +512,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const zoneInfo = getZoneAtPosition(mousePos);
     if (zoneInfo !== null) {
       const { index, zoneType } = zoneInfo;
-      isDeleting = true;
       if (zoneType === "user") {
         if (confirm(`Delete User Zone ${index + 1}?`)) {
           userZones.splice(index, 1);
@@ -529,7 +525,6 @@ document.addEventListener("DOMContentLoaded", () => {
           updateCoordinatesOutput();
         }
       }
-      isDeleting = false
     }
   }
 
