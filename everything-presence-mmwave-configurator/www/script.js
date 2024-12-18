@@ -1587,10 +1587,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	async function haUserZones() {
     console.log(haZones, haExclusionZones, userZones, exclusionZones)
     for await (const zone of haZones){
+      if(zone.beginX === 0 && zone.endX === 0 && zone.beginY === 0 && zone.endY === 0 ) return
       const zoneIndex = haZones.indexOf(zone);
       userZones[zoneIndex] = zone
     }
     for await (const zone of haExclusionZones){
+      if(zone.beginX === 0 && zone.endX === 0 && zone.beginY === 0 && zone.endY === 0 ) return
       const zoneIndex = haExclusionZones.indexOf(zone);
       exclusionZones[zoneIndex] = zone
     }

@@ -1,3 +1,7 @@
+### 1.1.1.10
+
+- Ignore all 0 zones
+
 ### 1.1.1.9
 
 - Fix copy paste mistake of zone types
