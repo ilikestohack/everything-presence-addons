@@ -1,3 +1,7 @@
+### 1.1.1.8
+
+- Fix mistake where ha zone to user zone conversion was not setting zones properly
+
 ### 1.1.1.7
 
 - Revert autoselection of device

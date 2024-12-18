@@ -1588,11 +1588,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(haZones, haExclusionZones, userZones, exclusionZones)
     for await (const zone of haZones){
       const zoneIndex = haZones.indexOf(zone);
-      userZones[zoneIndex] = haZones
+      userZones[zoneIndex] = zone
     }
     for await (const zone of haExclusionZones){
       const zoneIndex = haZones.indexOf(zone);
-      exclusionZones[zoneIndex] = haZones
+      exclusionZones[zoneIndex] = zone
     }
     drawVisualization();
     updateCoordinatesOutput();
