@@ -1,3 +1,7 @@
+### 1.1.1.9
+
+- Fix copy paste mistake of zone types
+
 ### 1.1.1.8
 
 - Fix mistake where ha zone to user zone conversion was not setting zones properly

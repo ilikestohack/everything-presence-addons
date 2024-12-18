@@ -1591,7 +1591,7 @@ document.addEventListener("DOMContentLoaded", () => {
       userZones[zoneIndex] = zone
     }
     for await (const zone of haExclusionZones){
-      const zoneIndex = haZones.indexOf(zone);
+      const zoneIndex = haExclusionZones.indexOf(zone);
       exclusionZones[zoneIndex] = zone
     }
     drawVisualization();
