@@ -1,3 +1,7 @@
+### 1.1.1.7
+
+- Revert autoselection of device
+
 ### 1.1.1.6
 
 - Add list of issues to be resolved: 35, 18, 27
