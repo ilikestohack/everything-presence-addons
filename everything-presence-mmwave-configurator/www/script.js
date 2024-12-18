@@ -801,7 +801,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const option = document.createElement("option");
       option.value = device.id;
       option.textContent = device.name;
-      if(devices.length === 1) option.selected = true; // Set device if only one
       deviceSelect.appendChild(option);
     });
   }
