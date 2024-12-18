@@ -1580,6 +1580,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
+	// ==========================
+	// === HA -> User Zones ===
+	// === by charmines ===
+	// ==========================
+	document.getElementById("haUserZonesButton").addEventListener("click", haUserZones);
+	async function haUserZones() {
+    console.log(haZones, haExclusionZones, userZones, exclusionZones)
+    for await (const zone of haZones){
+      const zoneIndex = haZones.indexOf(zone);
+      userZones[zoneIndex] = haZones
+    }
+    for await (const zone of haExclusionZones){
+      const zoneIndex = haZones.indexOf(zone);
+      exclusionZones[zoneIndex] = haZones
+    }
+    drawVisualization();
+    updateCoordinatesOutput();
+    console.log(haZones, haExclusionZones, userZones, exclusionZones)
+  }
+
   // ==========================
   // === Save Exclusion Zone to HA ===
   // ==========================
