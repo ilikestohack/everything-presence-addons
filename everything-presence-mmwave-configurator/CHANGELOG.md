@@ -1,3 +1,7 @@
+### 1.1.1.12
+
+- Fix zones not loading when all 0s
+
 ### 1.1.1.11
 
 - Fix zone movement null type issues
