@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let dy = unscaleY(mousePos.y) - unscaleY(dragOffset.y);
 
     if (dragType === "move") {
-      if (zoneInfo.zoneType === "user") {
+      if (draggingZoneType === "user") {
         let zone = userZones[draggingZone];
 
         let newBeginX = zone.beginX + dx;
@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
         zone.endX = Math.round(zone.endX);
         zone.beginY = Math.round(zone.beginY);
         zone.endY = Math.round(zone.endY);
-      } else if (zoneInfo.zoneType === "exclusion") {
+      } else if (draggingZoneType === "exclusion") {
         let zone = exclusionZones[draggingZone];
         let newBeginX = zone.beginX + dx;
         let newEndX = zone.endX + dx;

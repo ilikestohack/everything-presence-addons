@@ -1,3 +1,7 @@
+### 1.1.1.11
+
+- Fix zone movement null type issues
+
 ### 1.1.1.10
 
 - Ignore all 0 zones
